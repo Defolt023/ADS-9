@@ -17,14 +17,14 @@ class BST {
   if (rrot == nullptr) {
   rrot = new Node;
   rrot->valee = valee;
-  rrot->ssuumma = 1;
+  rrot->ssummaa = 1;
   rrot->leflef = rrot->rigrig = nullptr;
   } else if (rrot->valee < valee) {
   rrot->rigrig = addNode(rrot->rigrig, valee);
   } else if (rrot->valee > valee) {
   rrot->leflef = addNode(rrot->leflef, valee);
   } else {
-  rrot->ssuumma++;
+  rrot->ssummaa++;
   }
   return rrot;
   }
