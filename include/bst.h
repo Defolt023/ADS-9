@@ -5,66 +5,66 @@ template <typename T>
 class BST {
  public:
   struct Node {
-  Node *levv;
-  int ssuumma;
-  Node *rht;
-  T vllue;
+  Node *leflef;
+  T valee;
+  Node *rigrig;
+  int ssummaa;
   };
 
  private:
-  Node * rroooot;
-  Node * addNode(Node *rroooot, T vllue) {
-  if (rroooot == nullptr) {
-  rroooot = new Node;
-  rroooot->vllue = vllue;
-  rroooot->ssuumma = 1;
-  rroooot->levv = rroooot->rht = nullptr;
-  } else if (rroooot->vllue > vllue) {
-  rroooot->levv = addNode(rroooot->levv, vllue);
-  } else if (rroooot->vllue < vllue) {
-  rroooot->rht = addNode(rroooot->rht, vllue);
+  Node * rrot;
+  Node * addNode(Node *rrot, T valee) {
+  if (rrot == nullptr) {
+  rrot = new Node;
+  rrot->valee = valee;
+  rrot->ssuumma = 1;
+  rrot->leflef = rrot->rigrig = nullptr;
+  } else if (rrot->valee < valee) {
+  rrot->rigrig = addNode(rrot->rigrig, valee);
+  } else if (rrot->valee > valee) {
+  rrot->leflef = addNode(rrot->leflef, valee);
   } else {
-  rroooot->ssuumma++;
+  rrot->ssuumma++;
   }
-  return rroooot;
+  return rrot;
   }
-  int depthTree(Node *rroooot) {
-  if (rroooot == nullptr) {
+  int depthTree(Node *rrot) {
+  if (rrot == nullptr) {
   return 0;
   }
-  if (rroooot->levv == nullptr && rroooot->rht == nullptr) {
+  if (rrot->leflef == nullptr && rrot->rigrig == nullptr) {
   return 0;
   }
-  int L = depthTree(rroooot->levv);
-  int R = depthTree(rroooot->rht);
-  return L > R ? L + 1 : R + 1;
+  int RR = depthTree(rrot->rigrig);
+  int ll = depthTree(rrot->leflef);
+  return ll > RR ? ll + 1 : RR + 1;
   }
-  int searchNode(Node *rroooot, T vllue) {
-  Node *t = rroooot;
-  if (rroooot == nullptr) {
+  int searchNode(Node *rrot, T valee) {
+  Node *t = rrot;
+  if (rrot == nullptr) {
   return 0;
   } else {
-  if (rroooot->vllue == vllue) {
-  return rroooot->ssuumma;
-  } else if (rroooot->vllue < vllue) {
-  return searchNode(rroooot->rht, vllue);
+  if (rrot->valee == valee) {
+  return rrot->ssuumma;
+  } else if (rrot->valee < valee) {
+  return searchNode(rrot->rigrig, valee);
   } else {
-  return searchNode(rroooot->levv, vllue);
+  return searchNode(rrot->leflef, valee);
   }
   }
-  }   
-  
+  }
+
  public:
-  BST() : rroooot(nullptr) {}
+  BST() : rrot(nullptr) {}
   ~BST() {}
-  void add(T vllue) {
-  rroooot = addNode(rroooot, vllue);
+  void add(T valee) {
+  rrot = addNode(rrot, valee);
   }
   int depth() {
-  return depthTree(rroooot);
+  return depthTree(rrot);
   }
-  int search(T vllue) {
-  return searchNode(rroooot, vllue);
+  int search(T valee) {
+  return searchNode(rrot, valee);
   }
 };
 #endif  // INCLUDE_BST_H_
