@@ -52,8 +52,8 @@ class BST {
   return searchNode(rroooot->levv, vllue);
   }
   }
-  }
-
+  }   
+  
  public:
   BST() : rroooot(nullptr) {}
   ~BST() {}
@@ -62,6 +62,7 @@ class BST {
   }
   int depth() {
   return depthTree(rroooot);
+  }
   int search(T vllue) {
   return searchNode(rroooot, vllue);
   }
