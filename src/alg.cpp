@@ -6,12 +6,12 @@
 #include  "bst.h"
 
 BST<std::string> makeTree(const char* filename) {
-  std::ifstream file(filename);
+ std::ifstream file(filename);
   BST<std::string> derevo;
   std::string lier;
   std::string slovo;
-  while (!file.eof()) {     
-  file >> slovo;      
+  while (!file.eof()) {
+  file >> slovo;
   int i = 0;
   while (i < slovo.length()) {
   int j = 0;
@@ -27,7 +27,7 @@ BST<std::string> makeTree(const char* filename) {
   lier = "";
   } else {
   i++;
-  }
+  }   
   }
   }
   return derevo;
