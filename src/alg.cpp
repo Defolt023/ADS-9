@@ -27,7 +27,7 @@ BST<std::string> makeTree(const char* filename) {
   lier = "";
   } else {
   i++;
-  }   
+  }
   }
   }
   return derevo;
