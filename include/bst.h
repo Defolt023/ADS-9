@@ -45,7 +45,7 @@ class BST {
   return 0;
   } else {
   if (rrot->valee == valee) {
-  return rrot->ssuumma;
+  return rrot->ssummaa;
   } else if (rrot->valee < valee) {
   return searchNode(rrot->rigrig, valee);
   } else {
